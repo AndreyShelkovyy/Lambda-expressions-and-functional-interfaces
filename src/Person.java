@@ -1,5 +1,4 @@
 public class Person implements Comparable<Person> {
-    public String getSurname;
     private String name;
     private String surname;
     private int age;
@@ -27,4 +26,6 @@ public class Person implements Comparable<Person> {
     public String toString() {
         return name + " " + surname + ", " + age + " лет.";
     }
+
+
 }
