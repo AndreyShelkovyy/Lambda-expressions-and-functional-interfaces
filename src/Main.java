@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +8,8 @@ public class Main {
         people.add(new Person("Сергей", "Радонежский", 105));
         people.add(new Person("Николай", "Чудотворец-Святой", 90));
         people.add(new Person("Серафим", "Соровский-Свято-Дивеево", 65));
+        people.add(new Person("Георгий", "Победоносец-Свято-Полководец", 15));
+        people.add(new Person("Матрона", "Московская-Святая", 10));
 
         people.sort((o1, o2) -> {
             String[] surname1 = o1.getSurname().split("\\P{IsAlphabetic}+");
@@ -20,6 +23,9 @@ public class Main {
                 return surCompare;
             }
         });
+
+        Predicate<Person> personPredicate = (s -> s.getAge() < 18);
+        people.removeIf(personPredicate);
 
         System.out.println("Список по знатности:");
         for (int i = 0; i < people.size(); i++) {
