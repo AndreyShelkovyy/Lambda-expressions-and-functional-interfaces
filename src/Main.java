@@ -21,7 +21,7 @@ public class Main {
             }
         });
 
-        System.out.println("Список по знатности:"); //по количеству слов в фамилии
+        System.out.println("Список по знатности:");
         for (int i = 0; i < people.size(); i++) {
             System.out.println((i + 1) + ". " + people.get(i));
         }
